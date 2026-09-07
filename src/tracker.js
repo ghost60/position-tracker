@@ -111,6 +111,10 @@ async function resolveScopes(account, client) {
   return scopes;
 }
 
+function round12(value) {
+  return Number(value.toFixed(12));
+}
+
 function diffPositionMaps(before, after, activeScopes) {
   const changes = [];
   const keys = new Set(after.keys());
@@ -121,9 +125,9 @@ function diffPositionMaps(before, after, activeScopes) {
   for (const key of keys) {
     const previous = before.get(key);
     const current = after.get(key);
-    const beforeQuantity = Number(previous?.quantity || 0);
-    const afterQuantity = Number(current?.quantity || 0);
-    const deltaQuantity = afterQuantity - beforeQuantity;
+    const beforeQuantity = round12(Number(previous?.quantity || 0));
+    const afterQuantity = round12(Number(current?.quantity || 0));
+    const deltaQuantity = round12(afterQuantity - beforeQuantity);
     if (Math.abs(deltaQuantity) < 1e-12) continue;
     const info = current || previous;
     changes.push({
