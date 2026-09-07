@@ -1,0 +1,42 @@
+{
+  "accounts": [
+    {
+      "id": "strategy-a",
+      "name": "策略账户 A",
+      "apiKeyEnv": "BINANCE_STRATEGY_A_API_KEY",
+      "apiSecretEnv": "BINANCE_STRATEGY_A_API_SECRET",
+      "discoverSubAccounts": false,
+      "subAccounts": [
+        {
+          "id": "strategy-a-master",
+          "name": "策略账户 A 主账户",
+          "type": "master",
+          "markets": ["usdm", "coinm"]
+        },
+        {
+          "id": "strategy-a-sub-1",
+          "name": "策略账户 A 一号子账户",
+          "type": "sub",
+          "email": "sub-1@example.com",
+          "markets": ["usdm", "coinm"]
+        },
+        {
+          "id": "strategy-a-sub-2",
+          "name": "策略账户 A 二号子账户",
+          "type": "sub",
+          "email": "sub-2@example.com",
+          "markets": ["usdm"]
+        }
+      ]
+    },
+    {
+      "id": "strategy-b",
+      "name": "策略账户 B",
+      "apiKeyEnv": "BINANCE_STRATEGY_B_API_KEY",
+      "apiSecretEnv": "BINANCE_STRATEGY_B_API_SECRET",
+      "discoverSubAccounts": true,
+      "discoveredSubAccountMarkets": ["usdm"],
+      "subAccounts": []
+    }
+  ]
+}

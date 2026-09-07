@@ -1,0 +1,15 @@
+{
+  "name": "binance-position-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Standalone Binance multi-account position change tracker with webhook delivery.",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "scan": "node src/index.js --once",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
